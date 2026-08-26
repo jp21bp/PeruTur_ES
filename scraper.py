@@ -75,12 +75,12 @@ for i, url in enumerate(urls[start:]):
 ##### Finalizando web scrapping
 #### Transformando filas en dataframe
 tmp = pd.DataFrame(filas, columns=['TIPO','OBSERVACION'])
-# tmp_path = os.path.join('Datos', 'Limpios', 'tmp.csv')
-# tmp.to_csv(tmp_path, index=False, encoding='utf-8')
+tmp_path = os.path.join('Datos', 'Webscapped', 'ingresos_web_scrapped.csv')
+tmp.to_csv(tmp_path, index=False, encoding='utf-8')
 
 #### Uniendo ambos dataframes
 df_final = pd.concat([df, tmp], ignore_index=False, axis=1)
 
 #### Guardando DF final
-limpio_path = os.path.join('Datos', 'Limpios', 'web_scrapped_inventario_recursos_turisticos.csv')
+limpio_path = os.path.join('Datos', 'WebScapped', 'web_scrapped_inventario_recursos_turisticos.csv')
 df_final.to_csv(limpio_path, index=False, encoding='utf-8')
