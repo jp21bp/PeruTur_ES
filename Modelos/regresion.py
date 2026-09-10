@@ -16,13 +16,14 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import mean_absolute_error, mean_squared_error,\
     root_mean_squared_error, r2_score
 import joblib
-    # Para hacer webapp con streamlit
 import statsmodels.api as sm # OLS
 from sklearn.linear_model import LinearRegression # Lin Regression
 from sklearn.model_selection import cross_val_score
 from sklearn.linear_model import Lasso #Lasso regresion
 from sklearn.ensemble import RandomForestRegressor # RF
 from sklearn.model_selection import GridSearchCV
+#### Pueba de Hipotesis
+from scipy import stats
 
 
 
@@ -174,8 +175,8 @@ df_resultados
 joblib.dump(gs.best_estimator_, './Modelos/model.pkl')
 
 #################################################################
-###### Creando visuales
-    # Voy hacer predicciones de los top 5 sitios turisticos
+###### Prueba de Hipotesis
+    # Voy hacer prueba con los top 5 sitios turisticos
 
 ##### Seleccionando datos adecuados
 #### Seleccionando top 5 sitios
@@ -202,6 +203,52 @@ y_pred_denorm = scaler.inverse_transform(y_pred.reshape(-1,1))
 #### Aregando preds a datos originales
 df_org_topX['NUM_PRED'] = y_pred_denorm
 
+
+##### Prueba de hipotesis en los top 5 sitios
+for sitio in top_X_sitios:
+    # Extrayendo datos del sitio seleccionado
+    num_actual = df_org_topX[df_org_topX['SITIO_TURISTICO'] == sitio]['NUMERO_VISITANTES']
+    num_predecido = df_org_topX[df_org_topX['SITIO_TURISTICO'] == sitio]['NUM_PRED']
+    # Prueba de normalidad
+    _, num_act_pvalor = stats.shapiro(num_actual.values)
+    _, num_pred_pvalor = stats.shapiro(num_predecido.values)
+    # Formalizando
+    num_act_normal = True if num_act_pvalor > 0.05 else False
+    num_pred_normal = True if num_pred_pvalor > 0.05 else False
+    print(f'Sitio {sitio} Normalidad - valores actuales {num_act_normal}; valores predecidos {num_pred_normal}')
+    # Prueba de hipotesis
+    if num_act_normal and num_pred_normal:
+        # Ambos necesitan ser normales para usar ttest
+        var_igual = True if num_actual.std() == num_predecido.std() else False
+        _, t_pvalor = stats.ttest_ind(
+            num_actual.values,
+            num_predecido.values,
+            equal_var=var_igual,
+            alternative='two-sided'
+        )
+        if t_pvalor < 0.05:
+            print(f'T-test p-valor {t_pvalor}: se acepta la hipotesis nula, las dos muestras son diferentes')
+        else:
+            print(f'T-test p-valor {t_pvalor}: no se rechaza la hipotesis nula, las dos muestras no son diferentes')
+    else: 
+        # Uno o ambos de los valores no son normales
+        _, w_pvalor = stats.wilcoxon(
+            num_actual.values,
+            num_predecido.values,
+            alternative='two-sided'
+        )
+        if t_pvalor < 0.05:
+            print(f'Wilcoxon p-valor {t_pvalor}: se acepta la hipotesis nula, las dos muestras son diferentes')
+        else:
+            print(f'Wilcoxon p-valor {t_pvalor}: no se rechaza la hipotesis nula, las dos muestras no son diferentes')
+
+# Resultados:
+    # Los valores del modelo y los valores actuales no son diferentes
+    # I.e., el modelo es una buena representacion para predecir los numero de visitantes
+
+
+#################################################################
+    # Creando Visuales #
 ##### Promedio de diferencia
 df_org_topX['DIFF'] = abs(df_org_topX['NUMERO_VISITANTES'] - df_org_topX['NUM_PRED'])
 diff_promedio = int(df_org_topX['DIFF'].mean().item())

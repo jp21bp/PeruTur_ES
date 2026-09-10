@@ -85,11 +85,11 @@ Reconociendo que el Perú tiene una abundancia de sitios históricos y culturale
 
 Patrones Destacados:
 * **Consistencia Mensual**
-    - Dentro de cada mes, los top 3 países generalmente son Chile, EE. UU. y Ecuador. Esta consistencia ayudará a crear marketing intencional en todos los meses del año. 
+    - Dentro de cada mes, los top 3 países generalmente son Chile, EE. UU. y Ecuador. Esta consistencia ayudará a crear marketing intencional en todos los meses del año. 
 * **Política fronteriza impacta número de visitantes internacionales**
-    - 5 de los top 6 países son **vecinos directos** del Perú. Una gran mayoría de visitantes internacionales depende de las políticas al borde de la frontera del Perú. 
+    - 5 de los top 6 países son **vecinos directos** del Perú. Una gran mayoría de visitantes internacionales depende de las políticas al borde de la frontera del Perú. 
 * **Gran concentración en 25 de los 198 países**
-    - El 95% de todos los visitantes internacionales provienen de los top 25 entre los 198 países. I.e., 177 países no tienen un aporte significativo en los visitantes y no hay necesidad de tener un enfoque importante en ellos. 
+    - El 95% de todos los visitantes internacionales provienen de los top 25 entre los 198 países. I.e., 177 países no tienen un aporte significativo en los visitantes y no hay necesidad de tener un enfoque importante en ellos. 
 
 ![Visitantes Por Mes](./Imagenes/VisitantesPorMes.png)
 
@@ -104,12 +104,12 @@ Considerando que Chile, EE. UU. y Ecuador ocupan más de la mitad del total de v
 
 Patrones Destacados:
 * 81 OCMs ocupan solo un 4.36% de visitantes internacionales.
-    - Existen 86 OCMs en Perú, con 81 de ellas agrupadas bajo la misma variable 'OTRAS_OCM'. Solo 4.36% de visitantes internacionales entran por estas otras OCMs, implicando que no tienen un impacto significativo. 
+    - Existen 86 OCMs en Perú, con 81 de ellas agrupadas bajo la misma variable 'OTRAS_OCM'. Solo 4.36% de visitantes internacionales entran por estas otras OCMs, implicando que no tienen un impacto significativo. 
     <h4 id="ocm"></h4>
 * OCM y su país vecino más **cercano**
-    - Cada OCM, excepto el Aeropuerto de Lima, tiene la mayoría de sus ingresantes viniendo del país vecino más cercano.
+    - Cada OCM, excepto el Aeropuerto de Lima, tiene la mayoría de sus ingresantes viniendo del país vecino más cercano.
 * Santa Rosa y Chilenos
-    - Aunque **28.41%** de todos los visitantes internacionales vienen por OCM Santa Rosa, la mayoría de esos ingresantes vienen de Chile. Esto se deduce del hecho de que 1/3 de todos los visitantes internacionales son chilenos, y 79.47% de ellos ingresan por Santa Rosa. 
+    - Aunque **28.41%** de todos los visitantes internacionales vienen por OCM Santa Rosa, la mayoría de esos ingresantes vienen de Chile. Esto se deduce del hecho de que 1/3 de todos los visitantes internacionales son chilenos, y 79.47% de ellos ingresan por Santa Rosa. 
 
 ![OCM Por Pais](./Imagenes/OCMPorPais.png)
 
@@ -124,9 +124,9 @@ Existen diferentes factores que afectan la cantidad de turistas en un mes, como 
 
 Patrones destacados:
 * Tendencia estacional en todos los sitios turisticos
-    - Existe una tendencia estacional en todos los sitios turísticos. En todos los sitios turísticos, julio y Agosto reciben la mayor cantidad de turistas, mientras febrero tiene la menor cantidad. 
+    - Existe una tendencia estacional en todos los sitios turísticos. En todos los sitios turísticos, julio y Agosto reciben la mayor cantidad de turistas, mientras febrero tiene la menor cantidad. 
 * Prominencia de Machu Picchu
-    - Los top 5 sitios tienen algún enfoque con Machu Picchu. Algunos son servicios con destino a Machu Picchu, y otros son sitios en su alrededor. 
+    - Los top 5 sitios tienen algún enfoque con Machu Picchu. Algunos son servicios con destino a Machu Picchu, y otros son sitios en su alrededor. 
 
 ![Turistas Mensuales](./Imagenes/TuristasMensuales.png)
 
