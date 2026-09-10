@@ -50,6 +50,8 @@ Los análisis de los datos coleccionados se encuentran [AQUÍ](./insights.ipynb)
 
 La creación y evaluación de los modelos se encuentran [AQUÍ](./Modelos/)
 
+La preuba de hipotesis se encuantran [AQUÍ](./Modelos/regresion.py)
+
 ## Estructura de los Datos y sus Verificaciones
 3 conjuntos de datos diferentes se utilizaron para desarrollar los análisis necesarios, y sus componentes son los siguientes:
 1. Visitantes internacionales: año, mes, país, continente, OCM y número de visitantes
@@ -143,11 +145,13 @@ Se esperaba que Machu Picchu, siendo una de las maravillas del mundo, fuera el s
 
 ## Modelos, Predicciones y sus Impactos
 ### Prediciendo los Números de Turistas Esperados
-Predecir la cantidad de visitantes que espera dentro de un mes ayudaría en la optimización de recursos para un negocio. Dado el mes, departamento y nombre del sitio turístico, el modelo de regresión predice el número de visitantes esperados en ese sitio turístico. 
+Predecir la cantidad de visitantes que se espera dentro de un mes ayudaría en la optimización de recursos para un negocio. Dado el mes, departamento y nombre del sitio turístico, el modelo de regresión predice el número de visitantes esperados en ese sitio turístico. 
 
 Tres modelos candidatos se utilizaron con estos datos: Regresión lineal, regresión lasso, random forest. Con una métrica adecuada aplicada a todos los candidatos, el modelo bosque aleatorio (random forest) obtuvo los mejores resultados. 
 
-Al aplicar el modelo con los datos disponibles, se calcula que hay una pequeña diferencia promedio de 4,915 turistas entre la predicción y el valor actual. Los resultados demuestran que el modelo se puede utilizar con confianza para predecir la cantidad de turistas dentro de una temporada mensual.
+Al aplicar el modelo con los datos disponibles, se calcula que hay una pequeña diferencia promedio de 4,915 turistas entre la predicción y el valor actual.
+
+A pesar de esa diferencia, la prueba de hipótesis demuestra que los resultados del modelo no varían significativamente de los números de visitantes actuales. En otras palabras, el modelo se puede utilizar con confianza para predecir la cantidad de turistas dentro de una temporada mensual.
 
 ![PredVSActual](./Imagenes/PredVSActual.png)
 
