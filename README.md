@@ -44,13 +44,15 @@ Se destacan los enfoques en targeted marketing, presupuesto dinámico y los siti
 
 
 <br><br>
-El proceso de web scraping de datos se encuentra [AQUÍ](./scraper.py)
+El frontend desplegado para el backend, modelo ML de prediccion se encuentra [AQUÍ](https://perutourismpredictioninterface.onrender.com/)
 
-Los análisis de los datos coleccionados se encuentran [AQUÍ](./insights.ipynb)
+Dockerfiles: [Backend](./Backend/Dockerfile) y [Frontend](./Frontend/Dockerfile)
+
+La creación del data Pipeline y la preuba de hipotesis se encuentran [AQUÍ](./pipeline_y_hipotesis.py)
 
 La creación y evaluación de los modelos se encuentran [AQUÍ](./Modelos/)
 
-La preuba de hipotesis se encuantran [AQUÍ](./Modelos/regresion.py)
+El proceso de web scraping de datos se encuentra [AQUÍ](./scraper.py)
 
 ## Estructura de los Datos y sus Verificaciones
 3 conjuntos de datos diferentes se utilizaron para desarrollar los análisis necesarios, y sus componentes son los siguientes:
